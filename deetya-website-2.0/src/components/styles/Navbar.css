@@ -1,0 +1,59 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap");
+
+
+/* Default: Desktop View */
+.nav-links {
+    display: flex;
+    gap: 2.5rem;
+}
+
+/* Hide Mobile Menu Button */
+.nav-menu-btn {
+    display: none;
+}
+
+/* Hide Mobile Menu */
+.mobile-menu {
+    display: none;
+}
+
+.links {
+    font-size: 27px;
+    font-weight: bold;
+}
+
+.logo {
+    font-size: 40px;
+}
+
+@media (max-width: 1500px) {
+    .links {
+        font-size: 22px;
+    }
+
+    .logo {
+        font-size: 35px;
+    }
+}
+
+/* Switch to Mobile Earlier (850px instead of 768px) */
+@media (max-width: 900px) {
+    .nav-links {
+        display: none;
+    }
+
+    .nav-menu-btn {
+        display: block;
+    }
+
+    .mobile-menu {
+        display: block;
+        position: absolute;
+        top: 5rem;
+        left: 0;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.9);
+        backdrop-filter: blur(10px);
+        box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+    }
+}

@@ -1,19 +1,22 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import "./index.css";
-// import App from './App.tsx'
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./components/Header.tsx";
 import About from "./components/About.tsx";
-import Education from "./components/Education.tsx";
-import Experience from "./components/Experience.tsx";
-import SlideTabContainer from "./components/Navigation.tsx";
+import Projects from "./components/Projects.tsx";
+import Navbar from "./components/Navbar.tsx";
+import Contact from "./components/Contact.tsx";
+import Home from "./components/Home.tsx";
+
 
 createRoot(document.getElementById("root") as HTMLElement).render(
-    <StrictMode>
-        <SlideTabContainer />
-        <Header />
-        <About />
-        <Education />
-        <Experience />
-    </StrictMode>
+    <Router>
+            <Navbar /> {/* Ensure Navbar is inside Router */}
+            <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/projects" element={<Projects />} />
+                <Route path="/contact" element={<Contact />} />
+            </Routes>
+        </Router>
 );

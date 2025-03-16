@@ -1,6 +1,25 @@
 :root {
     --primary-color: #ffffff;
-    --secondary-color: #9448ffd5;
+    --secondary-color: rgba(148, 72, 255, 0.679);
+    --translucent-color: rgba(148, 72, 255, 0.168);
+}
+
+* {
+    background-color: transparent;
+    color: var(--primary-color);
+}
+
+.bg-dark {
+    background-color: #0a0a23; /* Dark background */
+    background-image: radial-gradient(
+            circle,
+            rgba(255, 255, 255, 0.303) 1px,
+            transparent 1px
+        ),
+        radial-gradient(circle, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+    background-size: 150px 150px; /* Adjust for spacing */
+    background-position: 0 0, 75px 75px; /* Creates a pattern offset */
+    overflow: hidden;
 }
 
 .primary-color {
@@ -9,6 +28,14 @@
 
 .accent-color {
     color: var(--secondary-color);
+}
+
+.purple-bg {
+    background-color: var(--secondary-color);
+}
+
+.purple-translucent {
+    background-color: var(--translucent-color);
 }
 
 

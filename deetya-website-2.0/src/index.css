@@ -80,18 +80,7 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 } */
-* {
-    background-color: #0a0a23; /* Dark background */
-    background-image: radial-gradient(
-            circle,
-            rgba(255, 255, 255, 0.1) 1px,
-            transparent 1px
-        ),
-        radial-gradient(circle, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
-    background-size: 150px 150px; /* Adjust for spacing */
-    background-position: 0 0, 75px 75px; /* Creates a pattern offset */
-    /* overflow: hidden; */
-}
+
 
 /* .background-lines {
   position: absolute;

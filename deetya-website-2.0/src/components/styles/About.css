@@ -1,49 +1,67 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap");
 
-body {
+.about-container {
     font-family: "Poppins", sans-serif;
-    height: 100vh;
-    padding-left: 60px;
-    padding-right: 60px;
+    text-align: center;
+    background-color: var(--primary-color);
+    padding: 4rem 2rem;
 }
 
-.header {
-    font-size: 80px;
+/* Title */
+.about-title {
+    /* font-size: 3rem;
     font-weight: 800;
-
+    margin-bottom: 2rem; */
+    font-size: 60px;
 }
 
-/* .main-title {
-    display: flex;
-} */
-
-img {
-    border-radius: 50%;
-    max-width: 50vw;
-    max-height: 50vh;
-    border: 10px solid var(--secondary-color);
-}
-
-.info-container {
-    display: flex;
-    /* justify-content: space-between;  */
-}
-
-.image {
-
-}
-
-.info {
+/* Content Layout */
+.about-content {
     display: flex;
     flex-direction: column;
-    align-content: space-evenly;
-
-    padding-left: 400px;
-    padding-top: 20px;
-    font-size: 30px;
+    align-items: center;
+    gap: 2rem;
+    max-width: 900px;
+    margin: 0 auto;
 }
 
-.elem {
-    padding-bottom: 10px;
-    flex: 1;
+/* Image */
+.about-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 6px solid var(--secondary-color);
 }
+
+/* Info */
+.about-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    font-size: 1.25rem;
+    text-align: left;
+}
+
+.about-item {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+/* 🖥️ Desktop: Image Left, Text Right */
+    /* @media (min-width: 768px) {
+        .about-content {
+            flex-direction: row;
+            align-items: center;
+            text-align: left;
+        }
+
+        .about-image {
+            width: 250px;
+            height: 250px;
+        }
+
+        .about-info {
+            max-width: 500px;
+        }
+    } */
