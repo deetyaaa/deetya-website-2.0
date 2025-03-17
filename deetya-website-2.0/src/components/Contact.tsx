@@ -10,7 +10,7 @@ import "./styles/Contact.css";
 const Contact = () => {
     return (
         <section>
-            <ul className="info">
+            <ul className="info bg-dark">
                             <li className="elem">hihi</li>
                             <li  className="elem">Tea</li>
                             <li  className="elem">Milk</li>

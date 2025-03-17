@@ -2,6 +2,7 @@
     --primary-color: #ffffff;
     --secondary-color: rgba(148, 72, 255, 0.679);
     --translucent-color: rgba(148, 72, 255, 0.168);
+    --dark-translucent: rgba(10, 10, 35, 0.5);
 }
 
 * {
@@ -36,6 +37,10 @@
 
 .purple-translucent {
     background-color: var(--translucent-color);
+}
+
+.dark-translucent {
+    background-color: var(--dark-translucent);
 }
 
 

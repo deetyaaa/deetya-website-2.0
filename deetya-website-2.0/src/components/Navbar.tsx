@@ -18,7 +18,7 @@ const Navbar = () => {
 
     useEffect(() => {
         const handleScroll = () => {
-            setIsScrolled(window.scrollY > 30);
+            setIsScrolled(window.scrollY > 150);
         };
         window.addEventListener("scroll", handleScroll);
         return () => window.removeEventListener("scroll", handleScroll);
@@ -42,9 +42,15 @@ const Navbar = () => {
                 <div className="flex items-center justify-between">
                     {/* Logo */}
                     <motion.div
-                        initial={{ opacity: 0, y: -10 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.3 }}
+                        initial={{ scale: 0 }}
+                        animate={{ scale: 1 }}
+                        exit={{ x: 0 }}
+                        transition={{
+                            // delay: delay,
+                            type: "spring",
+                            stiffness: 100,
+                            ease: "circIn",
+                        }}
                         className=" font-extrabold bg-gradient-to-r from-purple-600 to-blue-500 bg-clip-text text-transparent logo"
                     >
                         Deetya Adhikari
@@ -80,7 +86,7 @@ const Navbar = () => {
                     {/* Mobile Menu Button */}
                     <div className="nav-menu-btn block">
                         <motion.button
-                            whileHover={{ scale: 1.1 }}
+                            whileHover={{ scale: 1.3 }}
                             onClick={() => setIsOpen(!isOpen)}
                             className="p-3 rounded-md primary-color hover:text-purple-600 transition duration-200"
                         >
