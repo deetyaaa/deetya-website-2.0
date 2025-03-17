@@ -1,6 +1,8 @@
 import React from "react";
 import { motion } from "framer-motion";
 
+import Starfield from "./Starfield";
+
 import kirbyImage from "../assets/img/kirby.jpg";
 import codingImage from "../assets/img/coding-img.jpg";
 import codeAesthetic from "../assets/img/code.jpg";
@@ -34,6 +36,7 @@ const Projects = () => {
 
   return (
     <div className="bg-dark text-white">
+      {/* <Starfield/> */}
       {/* Title Page Section */}
       <section style={{ backgroundImage: `url(${codeAesthetic})` }} className="h-screen bg-cover bg-no-repeat flex items-center justify-center text-center px-6 projects-title">
         <div className="max-w-7xl mx-auto">

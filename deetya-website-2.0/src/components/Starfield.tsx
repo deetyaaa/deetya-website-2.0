@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from "react";
 
-const Starfield = ({ numStars = 1000, speed = 0.001 }) => {
+const Starfield = ({ numStars = Math.min(1000, Math.max(300, window.innerWidth / 2)), speed = 0.001 }) => {
     const canvasRef = useRef<HTMLCanvasElement>(null);
 
     useEffect(() => {

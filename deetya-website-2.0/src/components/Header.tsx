@@ -4,9 +4,7 @@ import "../parent.css";
 import { motion } from "framer-motion";
 import { del } from "framer-motion/client";
 
-import Starfield from "./Starfield";
 // import Starfield from "react-starfield";
-
 // import "./styles/Header.css";
 
 const Header = () => {
@@ -27,32 +25,27 @@ const Header = () => {
 
     return (
         <section className="bg-dark flex items-center justify-center h-screen bg-primary text-center px-6">
+           
             <header className="container">
                 <div className="flex flex-col justify-center items-center h-screen text-center">
                     {/* Responsive Name Text */}
-                    <motion.div
+                    <motion.h1
+                        whileHover={hasAnimated ? { scale: 1.08 } : undefined}
                         initial={{ scale: 0 }}
                         animate={{ scale: 1 }}
                         exit={{ x: 0 }}
                         transition={{
-                            delay: hasAnimated ? 0 : delay,
+                            delay: delay,
                             type: "spring",
                             stiffness: 300,
                             ease: "circIn",
                         }}
                         onAnimationComplete={() => setHasAnimated(true)}
-                        className="text-center"
+                        className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-extrabold leading-tight primary-color"
                     >
-                        <motion.h1
-                            whileHover={
-                                hasAnimated ? { scale: 1.08 } : undefined
-                            }
-                            className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-extrabold leading-tight primary-color"
-                        >
-                            Hi, I'm{"\u00A0"}
-                            <span className="accent-color">Deetya.</span>
-                        </motion.h1>
-                    </motion.div>
+                        Hi, I'm{"\u00A0"}
+                        <span className="accent-color">Deetya.</span>
+                    </motion.h1>
 
                     {/* Typewriter Section */}
                     {showTypewriter && (

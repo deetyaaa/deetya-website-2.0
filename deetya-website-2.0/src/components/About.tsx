@@ -17,7 +17,10 @@ const About = () => {
     }, [isInView, hasAnimated]);
 
     return (
-        <section ref={aboutRef} className="bg-dark text-white px-6 py-16 md:py-24">
+        <section
+            ref={aboutRef}
+            className="bg-dark text-white px-6 py-16 md:py-24"
+        >
             <h1 className="about-title font-extrabold text-center mb-12">
                 About me {"\u00A0"} :)
             </h1>
@@ -57,14 +60,28 @@ const About = () => {
                             </span>{" "}
                             and cloud technologies.
                         </>,
-                        <>I enjoy working with AI, full-stack development, and cloud computing.</>,
-                        <>In my free time, I love drinking tea and playing video games.</>,
+                        <>
+                            I enjoy working with AI, full-stack development, and
+                            cloud computing.
+                        </>,
+                        <>
+                            In my free time, I love drinking tea and playing
+                            video games.
+                        </>,
                     ].map((text, index) => (
                         <motion.li
                             key={index}
                             className="bg-white/10 p-6 rounded-xl shadow-lg hover:bg-white/15 about-elem"
-                            initial={hasAnimated ? { scale: 0 } : { opacity: 0, y: 40 }}
-                            animate={hasAnimated ? { scale: 1 } : { opacity: 1, y: 0 }}
+                            initial={
+                                hasAnimated
+                                    ? { scale: 0 }
+                                    : { opacity: 0, y: 40 }
+                            }
+                            animate={
+                                hasAnimated
+                                    ? { scale: 1 }
+                                    : { opacity: 1, y: 0 }
+                            }
                             transition={{
                                 duration: hasAnimated ? 0.5 : 1,
                                 delay: hasAnimated ? 0 : index * 0.4,
@@ -72,8 +89,11 @@ const About = () => {
                                 stiffness: hasAnimated ? 100 : undefined,
                                 ease: hasAnimated ? "circIn" : "easeOut",
                             }}
-                            whileHover={{ scale: hasAnimated ? 1.09 : 1.05, borderColor: "#9333ea" }}
-                            
+                            whileHover={{
+                                scale: hasAnimated ? 1.05 : 1.05,
+                                borderColor: "#9333ea",
+                            }}
+                            // tmr: make a case for when the screen size is small (mobile) so the animation isnt too fat
                         >
                             {text}
                         </motion.li>
