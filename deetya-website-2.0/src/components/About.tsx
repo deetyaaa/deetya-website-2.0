@@ -12,7 +12,7 @@ const About = () => {
 
     useEffect(() => {
         if (isInView && !hasAnimated) {
-            setTimeout(() => setHasAnimated(true), 4000); // Wait for initial animation to complete
+            setTimeout(() => setHasAnimated(true), 1500); // Wait for initial animation to complete
         }
     }, [isInView, hasAnimated]);
 
@@ -66,7 +66,7 @@ const About = () => {
                             initial={hasAnimated ? { scale: 0 } : { opacity: 0, y: 40 }}
                             animate={hasAnimated ? { scale: 1 } : { opacity: 1, y: 0 }}
                             transition={{
-                                duration: hasAnimated ? 0.5 : 4,
+                                duration: hasAnimated ? 0.5 : 1,
                                 delay: hasAnimated ? 0 : index * 0.4,
                                 type: hasAnimated ? "spring" : "tween",
                                 stiffness: hasAnimated ? 100 : undefined,

@@ -5,6 +5,11 @@ body {
     height: 100vh;
 }
 
+
+.starfield {
+    pointer-events: none;  /* This ensures the starfield doesn't block hover actions */
+}
+
 .content {
     display: flex;
     flex-direction: column;
