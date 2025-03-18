@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import TypeWriter from "typewriter-effect";
 import "../parent.css";
 import { motion } from "framer-motion";
-import { del } from "framer-motion/client";
+// import { del } from "framer-motion/client";
 
 // import Starfield from "react-starfield";
 // import "./styles/Header.css";
@@ -11,7 +11,7 @@ const Header = () => {
     const [showTypewriter, setShowTypewriter] = useState(false);
     const [delay, setDelay] = useState<number>(0.9); // Initial value
     const delayTime = 1500;
-    const delayTime2 = 0.9;
+    // const delayTime2 = 0.9;
     const [hasAnimated, setHasAnimated] = useState<boolean>(false); // Initial value
 
     useEffect(() => {
@@ -60,7 +60,7 @@ const Header = () => {
                                 ease: "circIn",
                             }}
                             onAnimationComplete={() => setDelay(0)}
-                            className="mt-6 text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-medium leading-tight w-full flex justify-center primary-color"
+                            className="mt-6 text-xl sm:text-3xl md:text-4xl lg:text-5xl font-medium leading-tight w-full flex justify-center primary-color"
                         >
                             I'm a{"\u00A0"}
                             <span className="font-bold text-purple-600">

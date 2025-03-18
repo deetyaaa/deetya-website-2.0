@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import { useRef, useEffect } from "react";
 
 const Starfield = ({
     numStars = Math.min(1000, Math.max(300, window.innerWidth / 2)),

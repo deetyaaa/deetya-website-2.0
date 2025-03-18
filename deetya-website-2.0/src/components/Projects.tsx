@@ -1,15 +1,13 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import Starfield from "./Starfield";
 // import Starfield from "react-starfield";
 import kirbyImage from "../assets/img/kirby.jpg";
-import codingImage from "../assets/img/coding-img.jpg";
-import codeAesthetic from "../assets/img/code.jpg";
+
 import brickbreaker from "../assets/breakout.gif";
 import minesweeper from "../assets/img/minesweeper.png";
 import weather from "../assets/img/weather.png";
-import computer from "../assets/img/computer.jpg";
-import code from "../assets/img/cutesy.jpg";
+
 import spectrogram from "../assets/img/spectrogram.png";
 import vertex11 from "../assets/img/vertex11.png";
 import results from "../assets/img/results.png";
@@ -96,7 +94,7 @@ const Projects = () => {
                     initial={{ opacity: 0, y: -20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5 }}
-                    className="text-6xl sm:text-7xl md:text-8xl font-extrabold text-white"
+                    className="text-5xl sm:text-6xl md:text-9xl font-extrabold accent-color"
                 >
                     Projects.
                 </motion.h1>
@@ -104,7 +102,7 @@ const Projects = () => {
                     initial={{ opacity: 0, y: -20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.2 }}
-                    className="mt-4 text-xl sm:text-2xl text-white/80"
+                    className="mt-4 text-xl sm:text-2xl text-white/80 pt-3"
                 >
                     Check out what I've done so far!
                 </motion.p>
@@ -171,7 +169,7 @@ const Projects = () => {
                                         <span className="mt-2 text-md sm:text-lg md:text-xl text-gray-400 block">
                                             {project.date}
                                         </span>
-                                        <p className="mt-4 text-md sm:text-lg md:text-xl text-gray-300">{project.description}</p>
+                                        <p className="mt-4 text-md sm:text-lg md:text-2xl text-gray-300">{project.description}</p>
                                     </div>
                                 </motion.div>
 
@@ -199,7 +197,7 @@ const Projects = () => {
                         <motion.img
                             src={selectedImage}
                             alt="Enlarged Project"
-                            className="max-w-3xl max-h-[80vh] rounded-lg shadow-lg"
+                            className="max-w-full max-h-[80vh] sm:max-w-3xl sm:max-h-[80vh] lg:max-w-5xl lg:max-h-[90vh] xl:max-w-6xl xl:max-h-[95vh] rounded-lg shadow-lg"
                             initial={{ scale: 0.8 }}
                             animate={{ scale: 1 }}
                             exit={{ scale: 0.8 }}

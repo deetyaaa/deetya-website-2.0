@@ -1,12 +1,7 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { Menu, Router, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Link } from "react-router-dom"; // Import Link from react-router-dom
-
-import Header from "./Header.tsx";
-import About from "./About.tsx";
-import Projects from "./Projects.tsx";
-import Contact from "./Contact.tsx";
 
 import "../parent.css";
 import "./styles/Navbar.css";
@@ -42,20 +37,22 @@ const Navbar = () => {
                 <div className="max-w-7xl mx-auto px-6">
                     <div className="flex items-center justify-between">
                         {/* Logo */}
-                        <motion.div
-                            initial={{ scale: 0 }}
-                            animate={{ scale: 1 }}
-                            exit={{ x: 0 }}
-                            transition={{
-                                // delay: delay,
-                                type: "spring",
-                                stiffness: 100,
-                                ease: "circIn",
-                            }}
-                            className=" font-extrabold bg-gradient-to-r from-purple-600 to-blue-500 bg-clip-text text-transparent logo"
-                        >
-                            Deetya Adhikari
-                        </motion.div>
+                        {/* <motion.div> */}
+                            <motion.h1
+                                initial={{ scale: 0 }}
+                                animate={{ scale: 1 }}
+                                exit={{ x: 0 }}
+                                transition={{
+                                    // delay: delay,
+                                    type: "spring",
+                                    stiffness: 100,
+                                    ease: "circIn",
+                                }}
+                                className="text-xl sm:text-5xl md:text-6xl font-extrabold bg-gradient-to-r from-purple-600 to-blue-500 bg-clip-text text-transparent logo z-20"
+                            >
+                                Deetya Adhikari
+                            </motion.h1>
+                        {/* </motion.div> */}
 
                         {/* Desktop Navigation */}
                         <div className="nav-links hidden">
@@ -105,7 +102,7 @@ const Navbar = () => {
                         transition={{ duration: 0.3 }}
                         className="mobile-menu hidden"
                     >
-                        <div className="bg-dark pt-5 ">
+                        <div className="bg-dark pt-5 z-negative">
                             <div className="px-8 py-6 space-y-6 purple-translucent backdrop-blur-lg">
                                 {navItems.map(({ name, link }) => (
                                     <motion.div

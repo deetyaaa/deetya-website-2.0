@@ -1,9 +1,7 @@
-import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import "./index.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Header from "./components/Header.tsx";
-import About from "./components/About.tsx";
+
 import Projects from "./components/Projects.tsx";
 import Navbar from "./components/Navbar.tsx";
 import Contact from "./components/Contact.tsx";
