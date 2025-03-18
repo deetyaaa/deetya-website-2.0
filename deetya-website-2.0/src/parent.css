@@ -3,6 +3,8 @@
     --secondary-color: rgba(148, 72, 255, 0.679);
     --translucent-color: rgba(148, 72, 255, 0.168);
     --dark-translucent: rgba(10, 10, 35, 0.5);
+    --darker-translucent: rgba(10, 10, 35, 0.8);
+    --purple-translucent: rgba(148, 72, 255, 0.275);
 }
 
 * {
@@ -43,4 +45,8 @@
     background-color: var(--dark-translucent);
 }
 
+.darker-translucent {
+    background-image: linear-gradient(rgba(10, 10, 35, 1), rgba(9, 9, 34, 0.95),rgba(8, 8, 31, 0.7), rgba(10, 10, 35, 0.3));
+    /* background-color: var(--purple-translucent); */
+}
 

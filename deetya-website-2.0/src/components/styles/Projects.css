@@ -3,3 +3,12 @@
 .projects-title {
     background-image: url("../assets/img/coding-img.jpg");
 }
+
+.project-image {
+    border: 7px solid var(--primary-color); 
+    background-color: rgba(148, 72, 255, 0.168);
+}
+
+:hover.project-image {
+    border-color: var(--secondary-color);
+}

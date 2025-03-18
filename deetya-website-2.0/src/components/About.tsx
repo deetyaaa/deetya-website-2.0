@@ -6,7 +6,7 @@ import "./styles/About.css";
 
 const About = () => {
     const aboutRef = useRef(null);
-    const isInView = useInView(aboutRef, { once: true, margin: "-100px" });
+    const isInView = useInView(aboutRef, { once: true, margin: "-300px" });
 
     const [hasAnimated, setHasAnimated] = useState(false);
 
@@ -47,7 +47,7 @@ const About = () => {
                 </motion.div>
 
                 {/* Info Section */}
-                <motion.ul className="w-full lg:w-1/2 flex flex-col space-y-6 text-lg sm:text-xl lg:text-2xl leading-relaxed">
+                <ul className="w-full lg:w-1/2 flex flex-col space-y-6 text-lg sm:text-xl lg:text-2xl leading-relaxed">
                     {[
                         <>
                             I'm a{" "}
@@ -75,7 +75,7 @@ const About = () => {
                             initial={
                                 hasAnimated
                                     ? { scale: 0 }
-                                    : { opacity: 0, y: 40 }
+                                    : { opacity: 0, y: 60 }
                             }
                             animate={
                                 hasAnimated
@@ -83,10 +83,10 @@ const About = () => {
                                     : { opacity: 1, y: 0 }
                             }
                             transition={{
-                                duration: hasAnimated ? 0.5 : 1,
+                                duration: hasAnimated ? 0.5 : 0.9,
                                 delay: hasAnimated ? 0 : index * 0.4,
                                 type: hasAnimated ? "spring" : "tween",
-                                stiffness: hasAnimated ? 100 : undefined,
+                                stiffness: hasAnimated ? 150 : undefined,
                                 ease: hasAnimated ? "circIn" : "easeOut",
                             }}
                             whileHover={{
@@ -98,7 +98,7 @@ const About = () => {
                             {text}
                         </motion.li>
                     ))}
-                </motion.ul>
+                </ul>
             </div>
         </section>
     );

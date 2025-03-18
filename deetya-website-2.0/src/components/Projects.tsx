@@ -1,113 +1,214 @@
-import React from "react";
-import { motion } from "framer-motion";
-
+import React, { useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 import Starfield from "./Starfield";
-
+// import Starfield from "react-starfield";
 import kirbyImage from "../assets/img/kirby.jpg";
 import codingImage from "../assets/img/coding-img.jpg";
 import codeAesthetic from "../assets/img/code.jpg";
-
+import brickbreaker from "../assets/breakout.gif";
+import minesweeper from "../assets/img/minesweeper.png";
+import weather from "../assets/img/weather.png";
+import computer from "../assets/img/computer.jpg";
+import code from "../assets/img/cutesy.jpg";
+import spectrogram from "../assets/img/spectrogram.png";
+import vertex11 from "../assets/img/vertex11.png";
+import results from "../assets/img/results.png";
+import sigai from "../assets/sigai.gif";
 
 import "../parent.css";
 import "./styles/Projects.css";
 
 const Projects = () => {
-  const projects = [
-    {
-      title: "Project 1",
-      description: "Description of Project 1.",
-      date: "January 2023",
-      image: codingImage,
-    },
-    {
-      title: "Project 2",
-      description: "Description of Project 2.",
-      date: "March 2023",
-      image: codeAesthetic,
-    },
-    {
-      title: "Project 3",
-      description: "Description of Project 3.",
-      date: "July 2023",
-      image: kirbyImage,
-    },
-    // Add more projects as needed
-  ];
+    const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
-  return (
-    <div className="bg-dark text-white">
-      {/* <Starfield/> */}
-      {/* Title Page Section */}
-      <section style={{ backgroundImage: `url(${codeAesthetic})` }} className="h-screen bg-cover bg-no-repeat flex items-center justify-center text-center px-6 projects-title">
-        <div className="max-w-7xl mx-auto">
-          <motion.h1
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-extrabold text-white leading-tight"
-          >
-            My Projects
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="mt-6 text-lg sm:text-xl md:text-2xl text-white/80"
-          >
-            Discover the projects I have worked on, each with its unique challenges and solutions.
-          </motion.p>
-        </div>
-      </section>
+    const projects = [
+        {
+            title: "Course Review System",
+            frameworks: "<Java, SQLite>",
+            description:
+                "A longer description of Project 1. This project explores various aspects of web development, including front-end frameworks, back-end APIs, and best practices for UI/UX design.",
+            date: "December 2024",
+            image: kirbyImage,
+        },
+        {
+            title: "Club Website - SIGAI",
+            frameworks: "<Typescript, Firebase, Framer Motion>",
+            description:
+                "A longer description of Project 1. https://mlatuva.org/ This project explores various aspects of web development, including front-end frameworks, back-end APIs, and best practices for UI/UX design.",
+            date: "August 2023 - December 2024",
+            image: sigai,
+        },
+        {
+            title: "Automated Risk Management Questionnaires - Vertex11",
+            frameworks: "<NLP, Python, NLTK, HuggingFace>",
+            description:
+                "A longer description of Project 1. This project explores various aspects of web development, including front-end frameworks, back-end APIs, and best practices for UI/UX design.",
+            date: "June-August 2022",
+            image: vertex11,
+        },
+        {
+            title: "Automatic Music Transcriber",
+            frameworks: "<Python>",
+            description:
+                "A longer description of Project 1. This project explores various aspects of web development, including front-end frameworks, back-end APIs, and best practices for UI/UX design.",
+            date: "August 2022 - May 2023",
+            image: spectrogram,
+        },
+        {
+            title: "Music Genre Predictor",
+            frameworks: "<ML, Python, TensorFlow, APIs>",
+            description:
+                "A longer description of Project 1. This project explores various aspects of web development, including front-end frameworks, back-end APIs, and best practices for UI/UX design.",
+            date: "April-May 2023",
+            image: results,
+        },
+        {
+            title: "Weather App",
+            frameworks: "<React Native, APIs>",
+            description:
+                "This project involves machine learning and artificial intelligence applications. It includes data preprocessing, model training, and fine-tuning for optimal performance.",
+            date: "March 2022",
+            image: weather,
+        },
+        {
+            title: "Minesweeper",
+            frameworks: "<Java>",
+            description:
+                "A creative project involving game development, animation, and interactive storytelling. Built using a combination of Unity and JavaScript for dynamic effects.",
+            date: "April 2021",
+            image: minesweeper,
+        },
+        {
+            title: "Brickbreaker",
+            frameworks: "<Java>",
+            description:
+                "A creative project involving game development, animation, and interactive storytelling. Built using a combination of Unity and JavaScript for dynamic effects.",
+            date: "May 2020",
+            image: brickbreaker,
+        },
+    ];
 
-      {/* Timeline Section */}
-      <section className="py-20 px-6 bg-primary snap-y snap-mandatory overflow-y-auto h-auto">
-        <div className="max-w-7xl mx-auto">
-          <div className="relative">
-            {/* Vertical Timeline Line */}
-            <div className="border-l-4 border-secondary absolute left-1/2 transform -translate-x-1/2 h-full"></div>
-
-            {/* Project Timeline Sections */}
-            <div className="space-y-24">
-              {projects.map((project, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ duration: 0.5, delay: index * 0.3 }}
-                  className="relative flex items-center justify-start space-x-12 snap-start"
-                  style={{ height: "80vh" }} // Make each project take up a full screen
+    return (
+        <div className="bg-dark text-white relative">
+            {/* Title Section */}
+            <section className="h-screen bg-cover bg-center darker-translucent flex flex-col items-center justify-center text-center px-6 relative z-20">
+                <motion.h1
+                    initial={{ opacity: 0, y: -20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5 }}
+                    className="text-6xl sm:text-7xl md:text-8xl font-extrabold text-white"
                 >
-                  {/* Timeline Marker */}
-                  <div className="absolute left-1/2 transform -translate-x-1/2 w-8 h-8 bg-secondary rounded-full border-4 border-white shadow-lg"></div>
+                    Projects.
+                </motion.h1>
+                <motion.p
+                    initial={{ opacity: 0, y: -20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: 0.2 }}
+                    className="mt-4 text-xl sm:text-2xl text-white/80"
+                >
+                    Check out what I've done so far!
+                </motion.p>
+            </section>
 
-                  {/* Project Info */}
-                  <div
-                    className={`flex flex-col ${index % 2 === 0 ? "md:flex-row-reverse" : "md:flex-row"} w-full`}
-                  >
-                    {/* Project Details */}
-                    <div className="text-lg md:w-1/2 px-12 md:px-24">
-                      <h3 className="text-4xl font-semibold">{project.title}</h3>
-                      <p className="mt-6 text-xl">{project.description}</p>
-                      <span className="mt-4 text-sm text-gray-400">{project.date}</span>
-                    </div>
+            {/* Timeline Section */}
+            <section className="py-20 px-6 bg-primary relative z-10">
+                <div className="absolute top-0 left-0 w-full h-full z-0">
+                    <Starfield />
+                </div>
 
-                    {/* Project Image */}
-                    <div className="md:w-1/2 pr-20">
-                      <img
-                        src={project.image}
-                        alt={project.title}
-                        className="w-full h-full object-cover rounded-lg shadow-lg pl-20"
-                      />
+                <div className="max-w-7xl mx-auto relative">
+                    <div className="absolute left-1/2 transform -translate-x-1/2 w-2 h-full bg-white/40"></div>
+
+                    <div className="space-y-32 relative">
+                        {projects.map((project, index) => (
+                            <motion.div
+                                key={index}
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{
+                                    duration: 0.5,
+                                    delay: index * 0.2,
+                                }}
+                                className={`relative flex flex-col sm:flex-row w-full max-w-6xl mx-auto ${
+                                    index % 2 === 0
+                                        ? "justify-start"
+                                        : "justify-end"
+                                }`}
+                            >
+                                <div className="absolute left-1/2 transform -translate-x-1/2 w-8 h-8 bg-secondary rounded-full border-4 border-white z-10"></div>
+
+                                <motion.div
+                                    className="relative flex flex-col sm:flex-row w-[100%] sm:w-[80%] bg-black/40 backdrop-blur-md rounded-xl shadow-lg px-6 py-12 hover:bg-purple-600/5 hover:scale-105 transition transform group"
+                                    whileHover={{
+                                        scale: 1.05,
+                                        borderColor: "#9333ea",
+                                    }}
+                                >
+                                    {/* Clickable Image */}
+                                    <div className="w-full sm:w-1/2 px-5 mb-4 sm:mb-0">
+                                        <div
+                                            className="border-4 border-transparent rounded-lg transition-all duration-300 group-hover:border-purple-500 project-image cursor-pointer"
+                                            onClick={() =>
+                                                setSelectedImage(project.image)
+                                            }
+                                        >
+                                            <img
+                                                src={project.image}
+                                                alt={project.title}
+                                                className="w-full h-96 object-contain rounded-lg shadow-lg"
+                                            />
+                                        </div>
+                                    </div>
+
+                                    {/* Project Details */}
+                                    <div className="w-full sm:w-1/2 p-6 flex flex-col justify-between">
+                                        <h3 className="text-2xl sm:text-4xl md:text-5xl font-bold">
+                                            {project.title}
+                                        </h3>
+                                        <h4 className="text-xl sm:text-2xl md:text-3xl font-bold pt-4 accent-color">
+                                            {project.frameworks}
+                                        </h4>
+                                        <span className="mt-2 text-md sm:text-lg md:text-xl text-gray-400 block">
+                                            {project.date}
+                                        </span>
+                                        <p className="mt-4 text-md sm:text-lg md:text-xl text-gray-300">{project.description}</p>
+                                    </div>
+                                </motion.div>
+
+                                {/* <div className="w-full mt-4 sm:mt-0">
+                                    <p className="mt-4 text-2xl text-gray-300">
+                                        {project.description}
+                                    </p>
+                                </div> */}
+                            </motion.div>
+                        ))}
                     </div>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </div>
+                </div>
+            </section>
+
+            {/* Image Modal */}
+            <AnimatePresence>
+                {selectedImage && (
+                    <motion.div
+                        className="fixed inset-0 bg-black/70 backdrop-blur-md flex items-center justify-center z-50"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        onClick={() => setSelectedImage(null)}
+                    >
+                        <motion.img
+                            src={selectedImage}
+                            alt="Enlarged Project"
+                            className="max-w-3xl max-h-[80vh] rounded-lg shadow-lg"
+                            initial={{ scale: 0.8 }}
+                            animate={{ scale: 1 }}
+                            exit={{ scale: 0.8 }}
+                        />
+                    </motion.div>
+                )}
+            </AnimatePresence>
         </div>
-      </section>
-    </div>
-  );
+    );
 };
 
 export default Projects;
