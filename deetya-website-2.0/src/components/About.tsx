@@ -21,7 +21,8 @@ const About = () => {
             ref={aboutRef}
             className="bg-dark text-white px-6 py-16 md:py-24"
         >
-            <h1 className="about-title text-4xl sm:text-5xl md:text-7xl font-extrabold text-center mb-12">
+            {/* text-xl sm:text-2xl md:text-3xl lg:text-4xl */}
+            <h1 className="about-title text-5xl sm:text-5xl md:text-5xl lg:text-6xl font-extrabold text-center mb-12">
                 Overview.
             </h1>
 
@@ -42,12 +43,12 @@ const About = () => {
                         }}
                         src={kirbyImage}
                         alt="kirby"
-                        className="w-60 h-60 sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-full border-4 lg:border-8 border-secondary shadow-lg about-image"
+                        className="w-60 h-60 sm:w-70 sm:h-70 lg:w-80 lg:h-80 rounded-full border-4 lg:border-8 border-secondary shadow-lg about-image"
                     />
                 </motion.div>
 
                 {/* Info Section */}
-                <ul className="w-full lg:w-1/2 flex flex-col space-y-6 text-lg sm:text-xl lg:text-2xl leading-relaxed">
+                <ul className="w-full lg:w-1/2 flex flex-col space-y-6 text-md sm:text-lg lg:text-xl leading-relaxed">
                     {[
                         <>
                             I'm a{" "}

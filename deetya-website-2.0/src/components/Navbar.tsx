@@ -45,10 +45,11 @@ const Navbar = () => {
                                 transition={{
                                     // delay: delay,
                                     type: "spring",
-                                    stiffness: 100,
+                                    stiffness: 200,
                                     ease: "circIn",
                                 }}
-                                className="text-xl sm:text-5xl md:text-6xl font-extrabold bg-gradient-to-r from-purple-600 to-blue-500 bg-clip-text text-transparent logo z-20"
+                                whileHover={{scale:1.03}}
+                                className="text-3xl sm:text-3xl md:text-3xl lg:text-4xl xl:text-4xl font-extrabold bg-gradient-to-r from-purple-600 to-blue-500 bg-clip-text text-transparent z-20"
                             >
                                 Deetya Adhikari
                             </motion.h1>
@@ -73,7 +74,7 @@ const Navbar = () => {
                                     <Link
                                         key={name}
                                         to={link}
-                                        className="text-2xl font-semibold primary-color hover:text-purple-600 transition duration-200 links"
+                                        className="text-xl md:text-2xl font-bold primary-color hover:text-purple-600 transition duration-200 "
                                     >
                                         {name}
                                     </Link>

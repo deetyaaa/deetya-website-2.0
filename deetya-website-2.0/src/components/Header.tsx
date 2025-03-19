@@ -41,7 +41,7 @@ const Header = () => {
                             ease: "circIn",
                         }}
                         onAnimationComplete={() => setHasAnimated(true)}
-                        className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-extrabold leading-tight primary-color"
+                        className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-8xl font-extrabold leading-tight primary-color"
                     >
                         Hi, I'm{"\u00A0"}
                         <span className="accent-color">Deetya.</span>
@@ -60,7 +60,7 @@ const Header = () => {
                                 ease: "circIn",
                             }}
                             onAnimationComplete={() => setDelay(0)}
-                            className="mt-6 text-xl sm:text-3xl md:text-4xl lg:text-5xl font-medium leading-tight w-full flex justify-center primary-color"
+                            className="mt-6 text-xl sm:text-2xl md:text-3xl lg:text-4xl font-medium leading-tight w-full flex justify-center primary-color"
                         >
                             I'm a{"\u00A0"}
                             <span className="font-bold text-purple-600">

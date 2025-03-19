@@ -94,7 +94,7 @@ const Projects = () => {
                     initial={{ opacity: 0, y: -20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5 }}
-                    className="text-5xl sm:text-6xl md:text-9xl font-extrabold accent-color"
+                    className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold accent-color"
                 >
                     Projects.
                 </motion.h1>
@@ -144,32 +144,34 @@ const Projects = () => {
                                 >
                                     {/* Clickable Image */}
                                     <div className="w-full sm:w-1/2 px-5 mb-4 sm:mb-0">
-                                        <div
+                                        <motion.div
                                             className="border-4 border-transparent rounded-lg transition-all duration-300 group-hover:border-purple-500 project-image cursor-pointer"
                                             onClick={() =>
                                                 setSelectedImage(project.image)
                                             }
+                                            whileHover={{scale:1.02}}
                                         >
                                             <img
                                                 src={project.image}
                                                 alt={project.title}
                                                 className="w-full h-96 object-contain rounded-lg shadow-lg"
+                                                
                                             />
-                                        </div>
+                                        </motion.div>
                                     </div>
 
                                     {/* Project Details */}
-                                    <div className="w-full sm:w-1/2 p-6 flex flex-col justify-between">
-                                        <h3 className="text-2xl sm:text-4xl md:text-5xl font-bold">
+                                    <div className="w-full sm:w-1/2 sm:p-6 p-3 flex flex-col justify-between">
+                                        <h3 className="text-2xl sm:text-2xl md:text-3xl lg:text-4xl font-bold">
                                             {project.title}
                                         </h3>
-                                        <h4 className="text-xl sm:text-2xl md:text-3xl font-bold pt-4 accent-color">
+                                        <h4 className="text-xl sm:text-2xl md:text-2xl lg:text-2xl font-bold  pt-2 accent-color">
                                             {project.frameworks}
                                         </h4>
-                                        <span className="mt-2 text-md sm:text-lg md:text-xl text-gray-400 block">
+                                        <span className="sm:py-1 md:py-1 py-2 text-sm sm:text-md md:text-lg lg:text-xl text-gray-400 block">
                                             {project.date}
                                         </span>
-                                        <p className="mt-4 text-md sm:text-lg md:text-2xl text-gray-300">{project.description}</p>
+                                        <p className=" text-md sm:text-md md:text-lg lg:text-xl text-gray-300">{project.description}</p>
                                     </div>
                                 </motion.div>
 
@@ -188,7 +190,7 @@ const Projects = () => {
             <AnimatePresence>
                 {selectedImage && (
                     <motion.div
-                        className="fixed inset-0 bg-black/70 backdrop-blur-md flex items-center justify-center z-50"
+                        className="fixed inset-0 bg-black/70 backdrop-blur-md flex items-center justify-center z-50 h-[40vh] sm:h-[50vh] md:h-[60vh] lg:h-[70vh]"
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
